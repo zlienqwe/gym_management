@@ -1,0 +1,43 @@
+.nav{
+    background-color: #000000;
+    border-radius: 10px;
+    margin: auto auto;
+
+    width: 1080px;
+    height: 60px;
+}
+
+.nav ul
+{
+    list-style-type: none;
+    margin: auto 0;
+    padding: 0;
+    display: inline-block;
+    border-radius: inherit;
+}
+
+.nav li {
+    display: inline-block;
+    width: 90px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-size: medium;
+}
+
+#logout {
+    text-align: center;
+    margin-left: 600px;
+}
+.navson {
+    color: #ffffff;
+}
+
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #afad98;
+}

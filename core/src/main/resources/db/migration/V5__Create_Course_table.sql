@@ -1,0 +1,9 @@
+USE gym_management_system;
+
+CREATE TABLE COURSE
+(
+  Id INT AUTO_INCREMENT primary key,
+  CoachId INT NOT NULL,
+  Name VARCHAR(50) NOT NULL,
+  FOREIGN KEY (CoachId) REFERENCES EMPLOYEE(Id)
+);
