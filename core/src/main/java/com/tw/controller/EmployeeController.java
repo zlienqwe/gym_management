@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
+
 /**
  * Created by Zlien on 7/27/15.
  */
@@ -23,8 +26,8 @@ public class
     private UserService userService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView getEmployeesPage(){
-        return new ModelAndView("employees", "employees", employeeService.getAllEmployees());
+    public List<Employee> getEmployeesPage(){
+        return  employeeService.getAllEmployees();
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)

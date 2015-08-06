@@ -18,14 +18,14 @@
         <property name="suffix" value=".jsp" />
     </bean>
 
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/users/**"/>
-            <mvc:mapping path="/customers/**"/>
-            <mvc:mapping path="/courses/**"/>
-            <mvc:mapping path="/schedules/**"/>
-            <mvc:mapping path="/employees/**"/>
-            <bean class="com.tw.interceptor.HandlerInterceptor"/>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/users/**"/>-->
+            <!--<mvc:mapping path="/customers/**"/>-->
+            <!--<mvc:mapping path="/courses/**"/>-->
+            <!--<mvc:mapping path="/schedules/**"/>-->
+            <!--<mvc:mapping path="/employees/**"/>-->
+            <!--<bean class="com.tw.interceptor.HandlerInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 </beans>

@@ -1,6 +1,5 @@
 package com.tw.controller;
 
-import com.google.gson.Gson;
 import com.tw.Util.Md5Util;
 import com.tw.entity.Employee;
 import com.tw.entity.User;
@@ -13,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("/users")
@@ -24,7 +24,7 @@ public class UserController {
     @Autowired
     private EmployeeService employeeService;
 
-    private ModelAndView createModelAndView(String viewName, String objectName, Object objectValue){
+    private ModelAndView createModelAndView(String viewName, String objectName, Object objectValue) {
 
         ModelAndView modelAndView = new ModelAndView();
 
@@ -35,9 +35,10 @@ public class UserController {
     }
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView getAllUsers() {
+//    @ResponseBody
+    public List<User> getAllUsers() {
 
-            return createModelAndView("users", "users", userService.getAllUsers());
+        return userService.getAllUsers();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -60,7 +61,7 @@ public class UserController {
     public void updateUser(@PathVariable int id,
                            @RequestParam String name,
                            @RequestParam String password,
-                            HttpServletResponse response) {
+                           HttpServletResponse response) {
 
         User user = new User(id, name, password, null);
 
@@ -80,13 +81,13 @@ public class UserController {
     @RequestMapping(value = "/creation", method = RequestMethod.GET)
     public ModelAndView getCreateUserPage() {
 
-            return new ModelAndView("createUser", "employees", employeeService.getAllEmployees());
+        return new ModelAndView("createUser", "employees", employeeService.getAllEmployees());
     }
 
     @RequestMapping(value = "/creation", method = RequestMethod.POST)
     public ModelAndView createUser(@RequestParam String name,
                                    @RequestParam String password,
-                                   @RequestParam String employeeName){
+                                   @RequestParam String employeeName) {
 
         Employee employee = employeeService.getEmployeeByName(employeeName);
 
@@ -106,14 +107,14 @@ public class UserController {
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public ModelAndView getUpdateUserAge(@PathVariable int id) {
 
-            User user = userService.getUserById(id);
-            return createModelAndView("updateUser", "user", user);
+        User user = userService.getUserById(id);
+        return createModelAndView("updateUser", "user", user);
     }
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.PUT)
     public ModelAndView UpdateUser(@PathVariable int id,
                                    @RequestParam String name,
-                                   @RequestParam String password){
+                                   @RequestParam String password) {
 
         User user = userService.getUserById(id);
         user.setName(name);

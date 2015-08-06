@@ -10,3 +10,4 @@ CREATE TABLE EMPLOYEE
   Age INT NOT NULL
 );
 INSERT INTO Employee VALUE(1, 'zhujiang', 'coach', 'male', 'zhu202390@gmail.com', 22);
+INSERT INTO Employee VALUE(2, 'zhaolele', 'coach', 'female', 'zhaolele@gmail.com', 23);
