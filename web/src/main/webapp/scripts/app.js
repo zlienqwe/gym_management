@@ -9,5 +9,8 @@ angular.module('gym_management', [
             .when('/users', {
                 templateUrl: 'views/users.html',
                 controller: 'userController'
+            })
+            .otherwise( {
+                redirectTo:"/"
             });
     });

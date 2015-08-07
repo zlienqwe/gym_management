@@ -24,7 +24,7 @@ public class UserDao {
         Query query = session.createQuery(hql);
         query.setString("name", name);
 
-        List<User>  users = query.list();
+        List<User> users = query.list();
 
         session.getTransaction().commit();
 
@@ -41,7 +41,7 @@ public class UserDao {
         Query query = session.createQuery(hql);
         query.setInteger("id", id);
 
-        User user = (User)query.list().get(0);
+        User user = (User) query.list().get(0);
 
         session.getTransaction().commit();
 
@@ -70,10 +70,13 @@ public class UserDao {
         session.getTransaction().commit();
     }
 
-    public void deleteUser(User user) {
+    public void deleteUser(int id) {
         Session session = HibernateUtil.getSessionFactory().getCurrentSession();
 
         session.beginTransaction();
+
+        User user = (User) session.load(User.class, id);
+
         session.delete(user);
         session.getTransaction().commit();
     }

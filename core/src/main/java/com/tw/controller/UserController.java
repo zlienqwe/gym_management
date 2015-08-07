@@ -97,12 +97,15 @@ public class UserController {
         return new ModelAndView("redirect:/users");
     }
 
-    @RequestMapping(value = "/deletion/{id}", method = RequestMethod.DELETE)
-    public void deleteUser(@PathVariable int id) {
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+//    @ResponseBody
+    public void deleteUserById(@PathVariable int id) {
+        System.out.println("!!!!!!");
 
-        User user = userService.getUserById(id);
-        userService.deleteUser(user);
+        System.out.println(id);
+        userService.deleteUser(id);
     }
+
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public ModelAndView getUpdateUserAge(@PathVariable int id) {

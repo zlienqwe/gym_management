@@ -11,3 +11,11 @@ CREATE TABLE EMPLOYEE
 );
 INSERT INTO Employee VALUE(1, 'zhujiang', 'coach', 'male', 'zhu202390@gmail.com', 22);
 INSERT INTO Employee VALUE(2, 'zhaolele', 'coach', 'female', 'zhaolele@gmail.com', 23);
+INSERT INTO Employee VALUE(3, 'aa', 'coach', 'female', 'zhaolele@gmail.com', 23);
+INSERT INTO Employee VALUE(4, 'cc', 'coach', 'female', 'zhaolele@gmail.com', 23);
+INSERT INTO Employee VALUE(5, 'vv', 'coach', 'female', 'zhaolele@gmail.com', 23);
+INSERT INTO Employee VALUE(6, 'bb', 'coach', 'female', 'zhaolele@gmail.com', 23);
+INSERT INTO Employee VALUE(7, 'qw', 'coach', 'female', 'zhaolele@gmail.com', 23);
+INSERT INTO Employee VALUE(8, 'ff', 'coach', 'female', 'zhaolele@gmail.com', 23);
+INSERT INTO Employee VALUE(9, 'vf', 'coach', 'female', 'zhaolele@gmail.com', 23);
+INSERT INTO Employee VALUE(10, 'jh', 'coach', 'female', 'zhaolele@gmail.com', 23);

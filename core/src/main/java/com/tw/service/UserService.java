@@ -26,8 +26,8 @@ public class UserService {
         return userDao.getUserById(id);
     }
 
-    public void deleteUser(User user) {
-        userDao.deleteUser(user);
+    public void deleteUser(int id) {
+        userDao.deleteUser(id);
     }
 
     public void updateUser(User user) {
