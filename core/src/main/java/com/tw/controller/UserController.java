@@ -65,7 +65,6 @@ public class UserController {
 
         User user = new User(id, name, password, null);
 
-        System.out.println(user);
         userService.updateUser(user);
 
 
@@ -100,9 +99,6 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 //    @ResponseBody
     public void deleteUserById(@PathVariable int id) {
-        System.out.println("!!!!!!");
-
-        System.out.println(id);
         userService.deleteUser(id);
     }
 

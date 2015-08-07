@@ -16,14 +16,12 @@ import java.util.List;
 public class EmployeeDao {
     public List<Employee> getAllEmployees(){
 
-        Session session = HibernateUtil.getSessionFactory().openSession();
-
-//        session.beginTransaction();
-        List<Employee> employees = session.createQuery("FROM Employee").list();
-
-//        session.getTransaction().commit();
-
-        return employees;
+        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
+        session.beginTransaction();
+        Query query = session.createQuery("from Employee");
+        List<Employee> employeeList = query.list();
+        session.getTransaction().commit();
+        return employeeList;
     }
 
     public Employee getEmployeeById(int id){

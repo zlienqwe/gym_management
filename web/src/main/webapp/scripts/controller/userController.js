@@ -12,7 +12,7 @@ angular.module('gym_management').controller('userController', function ($scope, 
     });
 
 
-    
+
     var deleteUser = function (id, callback) {
         $http.delete('api/users/' + id).success(function () {
             callback();
@@ -25,5 +25,14 @@ angular.module('gym_management').controller('userController', function ($scope, 
 
     };
 
+
+    //$http.get('api/employee').success(function(employee){
+    //    $scope.employee = employee;
+    //});
+
+
+    //$scope.addNewUser = function(){
+    //    addUser()
+    //}
 
 });

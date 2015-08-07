@@ -25,10 +25,16 @@ public class
     @Autowired
     private UserService userService;
 
+
+
+
+
+
     @RequestMapping(method = RequestMethod.GET)
-    public List<Employee> getEmployeesPage(){
-        return  employeeService.getAllEmployees();
+    public List<Employee> getAllEmployees(){
+        return employeeService.getAllEmployees();
     }
+
 
     @RequestMapping(value = "/update/{id}", method = RequestMethod.GET)
     public ModelAndView getEmployeesUpdatePage(@PathVariable int id){
@@ -48,23 +54,17 @@ public class
         employeeService.updateEmployee(employee);
         return new ModelAndView("redirect:/employees");
     }
+//
+//    @RequestMapping( method = RequestMethod.GET)
+//    public ModelAndView getCreationPage(){
+//
+//        return new ModelAndView("createEmployee", "users", userService.getAllUsers());
+//    }
 
-    @RequestMapping(value = "/creation", method = RequestMethod.GET)
-    public ModelAndView getCreationPage(){
+    @RequestMapping( method = RequestMethod.POST)
+    @ResponseBody
+    public void createEmployee(@RequestBody Employee employee){
 
-        return new ModelAndView("createEmployee", "users", userService.getAllUsers());
-    }
-
-    @RequestMapping(value = "/creation", method = RequestMethod.POST)
-    public void createEmployee(@RequestParam String employeeName,
-                               @RequestParam String role,
-                               @RequestParam String email,
-                               @RequestParam String gender,
-                               @RequestParam int age){
-
-//        User user = userService.getUsersByName(userName).get(0);
-//        Employee employee = new Employee(employeeName, role, user);
-        Employee employee = new Employee(employeeName, role, gender, email, age);
         employeeService.createEmployee(employee);
     }
 }
